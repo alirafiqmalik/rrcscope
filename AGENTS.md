@@ -8,6 +8,8 @@ Raw `.sdm` / `.pcap` hold subscriber identities — they stay untracked.
 
 Keep this repo simple, minimal, and easy to use. See `.scratch/adr/0001-keep-it-simple.md`. Do not add eSIM enable/disable. Airplane mode is opt-in (`--airplane`), never the default.
 
+Docs are hierarchical: the root `README.md` is the overview, and each directory's own `README.md` holds its details (`docs/` for cross-cutting architecture and findings). When you change code, update the README next to it. Never put raw identifiers in docs; mask an IMEI to its 8-digit TAC.
+
 Commit each finished piece of work locally so progress is traceable. See `.cursor/rules/local-git.mdc`.
 
 ## Agent skills

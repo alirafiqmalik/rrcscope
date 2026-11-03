@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="300" viewBox="0 0 1280 300" role="img" aria-labelledby="t d">
+  <title id="t">rrcscope</title>
+  <desc id="d">rrcscope: live LTE and 5G NAS and RRC from a rooted Shannon-modem Pixel. Pipeline: Pixel modem, dmd ring or DM node, adb, SCAT, GSMTAP on UDP 4729, tshark and the nasrrc analyzer.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#131c38"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#39c5cf"/>
+      <stop offset="1" stop-color="#58a6ff"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#58a6ff"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="300" rx="16" fill="url(#bg)"/>
+
+  <!-- radio waves -->
+  <g transform="translate(20 0)" fill="none" stroke="#39c5cf" stroke-linecap="round" opacity="0.55">
+    <path d="M1140 70a40 40 0 0 1 0 56" stroke-width="3"/>
+    <path d="M1158 52a66 66 0 0 1 0 92" stroke-width="3" opacity="0.7"/>
+    <path d="M1176 34a92 92 0 0 1 0 128" stroke-width="3" opacity="0.4"/>
+  </g>
+  <rect x="1114" y="60" width="38" height="76" rx="8" fill="none" stroke="#c9d1d9" stroke-width="3" opacity="0.8"/>
+  <rect x="1126" y="66" width="14" height="3" rx="1.5" fill="#c9d1d9" opacity="0.8"/>
+
+  <text x="64" y="112" font-family="ui-monospace, SFMono-Regular, 'DejaVu Sans Mono', Menlo, Consolas, monospace" font-size="72" font-weight="700" fill="#e6edf3"><tspan fill="url(#accent)">rrc</tspan>scope</text>
+  <text x="66" y="154" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="26" fill="#e6edf3">Live LTE/5G <tspan font-weight="700">NAS</tspan> &amp; <tspan font-weight="700">RRC</tspan> from a rooted Shannon-modem Pixel</text>
+  <text x="66" y="184" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#8b949e">measurement reports with their A3/B1 trigger · handovers that carry mobilityControlInfo · straight into Wireshark</text>
+
+  <!-- pipeline -->
+  <g font-family="ui-monospace, SFMono-Regular, 'DejaVu Sans Mono', Menlo, Consolas, monospace" font-size="15" text-anchor="middle">
+    <g stroke="#30363d" stroke-width="1.5">
+      <rect x="64" y="206" width="176" height="48" rx="10" fill="#161b22"/>
+      <rect x="272" y="206" width="204" height="48" rx="10" fill="#161b22"/>
+      <rect x="508" y="206" width="110" height="48" rx="10" fill="#161b22"/>
+      <rect x="650" y="206" width="110" height="48" rx="10" fill="#161b22"/>
+      <rect x="792" y="206" width="176" height="48" rx="10" fill="#161b22"/>
+      <rect x="1000" y="206" width="216" height="48" rx="10" fill="#1f3a5f" stroke="#58a6ff"/>
+    </g>
+    <text x="152" y="235" fill="#e6edf3">Pixel · Shannon</text>
+    <text x="374" y="235" fill="#e6edf3">dmd ring / DM node</text>
+    <text x="563" y="235" fill="#e6edf3">adb</text>
+    <text x="705" y="235" fill="#e6edf3">SCAT</text>
+    <text x="880" y="235" fill="#e6edf3">GSMTAP :4729</text>
+    <text x="1108" y="235" fill="#ffffff" font-weight="700">tshark · nasrrc</text>
+    <g stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow)">
+      <line x1="242" y1="230" x2="268" y2="230"/>
+      <line x1="478" y1="230" x2="504" y2="230"/>
+      <line x1="620" y1="230" x2="646" y2="230"/>
+      <line x1="762" y1="230" x2="788" y2="230"/>
+      <line x1="970" y1="230" x2="996" y2="230"/>
+    </g>
+  </g>
+</svg>

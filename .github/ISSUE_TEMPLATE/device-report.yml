@@ -1,0 +1,41 @@
+name: Device report
+description: Tell us how rrcscope behaved on your phone — working or not.
+labels: [device-report]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not paste raw `.sdm` / `.pcap` content or any IMSI, IMEI, TMSI or phone number.
+        A tshark one-line summary (`./scripts/dump_pcap.sh`) is enough.
+  - type: input
+    id: device
+    attributes:
+      label: Device and build
+      placeholder: "Pixel 8 (shiba), Android 15, user build, Magisk root"
+    validations:
+      required: true
+  - type: input
+    id: modem
+    attributes:
+      label: Modem
+      description: "`adb shell getprop gsm.version.baseband`"
+      placeholder: "g5300q-..."
+  - type: dropdown
+    id: path
+    attributes:
+      label: Path
+      options:
+        - live_tail_ring.sh (ring)
+        - experiment_scat_diag.sh node (DM node tap)
+        - capture/decode snapshot
+        - replay / analyzer only
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: What happened
+      description: Script output (the `[*]` lines), SCAT and tshark versions, and what you expected.
+      render: text
+    validations:
+      required: true

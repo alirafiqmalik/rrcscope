@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use rrcscope in your research, please cite it as below."
+title: "rrcscope: live LTE/5G NAS and RRC monitoring for Shannon-modem Pixels"
+type: software
+authors:
+  - family-names: Malik
+    given-names: Ali Hamza
+version: 0.1.0
+repository-code: "https://github.com/alirafiqmalik/rrcscope"
+keywords:
+  - LTE
+  - 5G NR
+  - RRC
+  - NAS
+  - GSMTAP
+  - baseband
+  - Samsung Shannon
+  - handover
+  - measurement report
+abstract: >-
+  Streams NAS and RRC control-plane messages from the Samsung Shannon modem of a
+  rooted Google Pixel to Wireshark as GSMTAP, through SCAT, and reports mobility
+  events (measurement reports with their trigger and signal levels, and handovers
+  identified by mobilityControlInfo / reconfigurationWithSync) from dissected fields.

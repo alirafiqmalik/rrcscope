@@ -4,7 +4,7 @@ sequenceDiagram
     participant N as E-UTRAN eNB<br/>PCI 310 Band 5
     participant E as EPC MME<br/>Verizon 311/480 roaming
 
-    Note over M: Capture path — dmd streams /dev/umts_dm0 → .sdm → SCAT (-t sec)<br/>SDM Start metadata leaks device IMEI 35497743••••••• + IMEI2 + confpack zz_truphone
+    Note over M: Capture path — dmd streams /dev/umts_dm0 → .sdm → SCAT (-t sec)<br/>SDM Start metadata leaks device IMEI 35497743••••••• (masked) + IMEI2 + confpack zz_truphone
     Note over M,E: Home PLMN 234/25 (Truphone) roaming on Verizon 311/480. Combined EPS/IMSI attach, GUTI-based.
     Note over M,E: PROTECTION TAG on every message —<br/>[BCAST] unauthenticated broadcast · [PLAIN] NAS/RRC, no integrity + no cipher (spoofable)<br/>[INTEG] integrity-protected, NOT ciphered (readable, tamper-evident) · [CIPHER] ciphered on air<br/>NB: Shannon logs NAS post-decipher, so a captured header-type 0 after security is a log artifact, not the on-air state.
 
@@ -35,7 +35,7 @@ sequenceDiagram
     rect rgba(70,130,180,0.10)
     Note over M,E: Phase 3 — identity solicitation (PLAIN) then ESM info (CIPHER)
     E->>M: EMM Identity request [PLAIN]<br/>identity type = IMEISV · sec-hdr type 0
-    M->>E: EMM Identity response [PLAIN]<br/>mobile identity = IMEISV 35497743•••••••• (device IMEI2 + SVN) · sec-hdr type 0
+    M->>E: EMM Identity response [PLAIN]<br/>mobile identity = IMEISV 35497743•••••••• (masked) (device IMEI2 + SVN) · sec-hdr type 0
     Note over M,E: PERMANENT EQUIPMENT ID IN THE CLEAR — full IMEISV over the air, unciphered, before AS security.<br/>tshark: "Plain NAS message, not security protected". This is the IMSI/IMEI-catcher primitive.<br/>No EPS-AKA Authentication req/resp this attach — network reused the GUTI security context.
     E->>M: ESM information request [CIPHER]<br/>PTI · request for APN + PCO behind NAS security
     M->>E: ESM information response [CIPHER]<br/>APN = truphone.com.mnc025.mcc234.gprs · PCO (DNS req, IPCP) — deferred behind security, NOT leaked on air

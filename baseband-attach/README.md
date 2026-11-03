@@ -30,7 +30,7 @@ Message flow (relative times):
 The IMEI leaves the device on two independent channels:
 
 - **Diagnostic stream.** Every SDM Start Response carries the device IMEI
-  `35497743•••••••`, IMEI2, and the active profile confpack `zz_truphone` in cleartext.
+  `35497743•••••••` (TAC shown, serial masked), IMEI2, and the active profile confpack `zz_truphone` in cleartext.
 - **Over the air.** The NAS **Identity Response** carries the full **IMEISV**
   (`35497743••••••••`, device IMEI2 + software version) to the network. It is sent
   **before AS security**, unciphered. The network requested it with an Identity request

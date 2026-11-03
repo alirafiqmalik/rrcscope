@@ -5,13 +5,31 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "nasrrc"
 version = "0.1.0"
-description = "NAS/RRC control-plane event classifier for Shannon SDM captures"
+description = "Live LTE/5G NAS and RRC mobility events from Shannon-modem Pixels (SDM -> SCAT -> GSMTAP -> tshark)"
 readme = "README.md"
 requires-python = ">=3.10"
+authors = [{ name = "Ali Hamza Malik" }]
+keywords = ["lte", "5g", "nr", "rrc", "nas", "gsmtap", "wireshark", "shannon", "pixel", "baseband", "handover"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Science/Research",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: System :: Networking :: Monitoring",
+    "Topic :: Security",
+]
 dependencies = []
 
 [project.optional-dependencies]
+# SCAT, the SDM decoder. Only the capture/replay scripts need it; the analyzer
+# itself is standard library plus tshark.
 decode = ["signalcat>=2.0.0"]
+
+[project.urls]
+Homepage = "https://github.com/alirafiqmalik/rrcscope"
+Source = "https://github.com/alirafiqmalik/rrcscope"
+Issues = "https://github.com/alirafiqmalik/rrcscope/issues"
 
 [project.scripts]
 nasrrc-analyze = "nasrrc.cli:main"

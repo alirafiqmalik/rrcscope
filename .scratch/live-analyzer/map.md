@@ -2,7 +2,7 @@
 
 ## Notes
 
-- Offline capture/decode scripts lifted from `baseband-attach/scripts/` and pointed at a local `.venv`.
+- Offline capture/decode scripts lifted from the 2026-08 attach capture (now `research/lte-attach-capture/`) and pointed at a local `.venv`.
 - Summary-line classifier in `src/nasrrc/` proven against `fixtures/example-lte/LTE_full_summary.txt`.
 - Live host path is **tail the ring over adb**, not `scat -s /dev/umts_dm0` on the host.
 

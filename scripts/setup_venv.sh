@@ -5,8 +5,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 python3 -m venv .venv
 .venv/bin/pip install -U pip
-.venv/bin/pip install -r requirements.txt
-.venv/bin/pip install -e .
+.venv/bin/pip install -e '.[decode]'
 echo "[+] venv ready: $ROOT/.venv"
 echo "    python -m nasrrc --help"
 echo "    .venv/bin/python -m scat.main -V"

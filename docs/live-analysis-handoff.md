@@ -1,5 +1,9 @@
 # Live NAS/RRC analysis — handoff
 
+> Historical design note (2026-08). It records the plan that started this repo.
+> Several open questions below were settled later — see
+> [`docs/findings.md`](findings.md) for what the device actually did.
+
 Goal: turn the offline SDM capture pipeline into a live analyzer, MobileInsight-style,
 for a Shannon-modem Pixel. This logs the research and the concrete build plan.
 
@@ -125,12 +129,12 @@ parser over dissected packets.
 - Latency of the tail-the-ring loop vs dmd's flush cadence — measure the sbuff write
   interval under load.
 - 5G: none of this changes for NR, but a live NR capture still needs actual NR coverage
-  (the Pixel stayed on LTE+CA; see `../nonroot-rsp-capture` and the 4G-vs-5G notes).
+  (the Pixel stayed on LTE+CA at the time).
 
 ## References
 
-- Offline scripts: `scripts/capture_nas_rrc.sh`, `scripts/decode_nas_rrc.sh`, `scripts/README.md`.
-- Decoded LTE example: `scripts/example-lte/`.
+- Offline scripts: [`scripts/capture_nas_rrc.sh`](../scripts/capture_nas_rrc.sh), [`scripts/decode_nas_rrc.sh`](../scripts/decode_nas_rrc.sh), [`scripts/README.md`](../scripts/README.md).
+- Decoded LTE example: [`fixtures/example-lte/`](../fixtures/example-lte/).
 - SCAT: fgsect/scat (PyPI `signalcat`), Samsung path `-t sec`, Qualcomm `-t qc`.
 - MobileInsight: github.com/mobile-insight/mobileinsight-core (Qualcomm DIAG; reference for
   analyzer event logic only).

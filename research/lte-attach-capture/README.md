@@ -1,12 +1,12 @@
 # Baseband NAS Attach Capture — Pixel 7a
 
 Frozen prior experiment. The maintained capture/decode/live scripts and classifier
-live at the repo root (`scripts/`, `src/nasrrc/`). Handoff that started this repo:
-`live-analysis-handoff.md`.
+live at the repo root ([`scripts/`](../../scripts/), [`src/nasrrc/`](../../src/nasrrc/)).
+Handoff that started this repo: [`docs/live-analysis-handoff.md`](../../docs/live-analysis-handoff.md).
 
 Live capture of the cellular modem's LTE Attach/Detach for the active eSIM, decoded
 to NAS/RRC. Captured 2026-08-13 on the rooted Pixel 7a (Samsung Exynos Modem 5300,
-Shannon/SIPC over PCIe). Diagram: `lte-attach-sequence.mmd`.
+Shannon/SIPC over PCIe). Diagram: [`lte-attach-sequence.mmd`](lte-attach-sequence.mmd).
 
 ## What was captured
 
@@ -104,7 +104,7 @@ the capture belongs to the device's working roaming line, seen on the shared mod
 
 ## Reproduce
 
-Use the repo-root scripts. Live stream until Ctrl-C: `../../scripts/live_tail_ring.sh`. Optional one-shot reattach: `--airplane`. Do not toggle eSIM profiles.
+Use the repo-root scripts. Live stream until Ctrl-C: [`scripts/live_tail_ring.sh`](../../scripts/live_tail_ring.sh). Optional one-shot reattach: `--airplane`. Do not toggle eSIM profiles.
 
 Modem is Samsung Shannon, not Qualcomm — use the SDM path, not DIAG/QMDL.
 

@@ -1,6 +1,6 @@
 # Agent instructions
 
-Shannon Pixel **NAS/RRC** monitor. Default: live stream until the user stops. Working code is `scripts/` and `src/nasrrc/`. `baseband-attach/` is a frozen prior capture.
+Shannon Pixel **NAS/RRC** monitor. Default: live stream until the user stops. Working code is `scripts/` and `src/nasrrc/`. `research/lte-attach-capture/` is a frozen prior capture.
 
 Raw `.sdm` / `.pcap` hold subscriber identities — they stay untracked.
 

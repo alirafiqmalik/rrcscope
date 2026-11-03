@@ -90,8 +90,6 @@ push_device_scripts() {
 }
 
 # A crashed or killed host must not leave the phone with dmd stopped or the USB
-# gadget rearranged, so the device restores itself if nothing else does.
-# A crashed or killed host must not leave the phone with dmd stopped or the USB
 # gadget rearranged, so the device restores itself if nothing else does. The
 # delay has to outlast the run: past it, the restore fires under a live host and
 # cuts the session out from under it, which is why serial mode refuses --secs 0.

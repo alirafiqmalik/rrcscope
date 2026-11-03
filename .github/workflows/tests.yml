@@ -12,8 +12,8 @@ jobs:
       matrix:
         python: ["3.10", "3.13"]
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python }}
       - name: Install tshark
@@ -21,6 +21,13 @@ jobs:
           sudo apt-get update
           sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tshark
           tshark --version | head -1
+          # Ubuntu confines tshark with AppArmor, which refuses to read the
+          # fixture under /home/runner. Unload whichever profile names it.
+          for profile in $(sudo grep -lsr tshark /etc/apparmor.d --exclude-dir=abstractions --exclude-dir=tunables); do
+            echo "unloading $profile"
+            sudo apparmor_parser -R "$profile" || true
+          done
+          tshark -r fixtures/synthetic-lte/lte-mobility.pcap | tail -1 || sudo dmesg | grep -i apparmor | tail -5
       - name: Python tests
         run: PYTHONPATH=src python -m unittest discover -s tests -v
       - name: Shell tests

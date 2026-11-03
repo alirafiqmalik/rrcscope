@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,6 +8,8 @@ version = "0.1.0"
 description = "Live LTE/5G NAS and RRC mobility events from Shannon-modem Pixels (SDM -> SCAT -> GSMTAP -> tshark)"
 readme = "README.md"
 requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [{ name = "Ali Hamza Malik" }]
 keywords = ["lte", "5g", "nr", "rrc", "nas", "gsmtap", "wireshark", "shannon", "pixel", "baseband", "handover"]
 classifiers = [

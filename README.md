@@ -4,6 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/alirafiqmalik/rrcscope/actions/workflows/tests.yml"><img src="https://github.com/alirafiqmalik/rrcscope/actions/workflows/tests.yml/badge.svg" alt="tests"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT license"></a>
   <img src="https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/RAT-LTE%20%C2%B7%205G%20NR-8957e5" alt="LTE and 5G NR">
   <img src="https://img.shields.io/badge/output-GSMTAP%20%E2%86%92%20Wireshark-1679A7?logo=wireshark&logoColor=white" alt="GSMTAP to Wireshark">
@@ -179,3 +180,8 @@ is blocked on `user` builds. More detail is in [docs/findings.md](docs/findings.
 
 If this helps your research, use GitHub's **Cite this repository** button (from
 [CITATION.cff](CITATION.cff)).
+
+## License
+
+[MIT](LICENSE). SCAT, which the scripts install and run as a separate program,
+has its own license (GPL-2.0-or-later).
